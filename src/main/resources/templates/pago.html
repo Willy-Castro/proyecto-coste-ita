@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pago</title>
+    <link rel="stylesheet" href="/pago.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Resumen de Compra</h1>
+
+        <div id="resumen" class="resumen-box"></div>
+
+        <a href="https://yape.com.pe/" target="_blank" class="boton-yape">Ir a Yape</a>
+
+        <div class="boton-volver">
+            <a href="/index.html" class="btn-volver">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script>
+        const carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];//trae el carrito que se guardo
+        let total = 0;
+        let resumenHTML = "<ul>";//arma la lista del pedido
+
+        carrito.forEach(p => {
+            resumenHTML += `<li>${p.nombre} x${p.cantidad} - S/ ${(p.precio * p.cantidad).toFixed(2)}</li>`;
+            total += p.precio * p.cantidad;
+        });//recorre todos los productos agregados y los muestra y suma todo en lista
+
+        total *= 1.18; // multiplica el igv por total
+        resumenHTML += `</ul><h3>Total a pagar (con IGV): S/ ${total.toFixed(2)}</h3>`;//cierra la lista
+
+        document.getElementById("resumen").innerHTML = resumenHTML;//busca la lista que se armo y la muestra
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url(imagenes/fondot.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.boton-volver {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .boton-volver .btn {
+    display: inline-block;
+    background-color: #ff5e00;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-volver .btn:hover {
+    background-color: #210d91;
+  }
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 45px;
+  }
+
+.producto-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.producto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.productoP {
+    background-color: rgb(253, 109, 109);
+    border: 1px solid #ff771c;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.productoP img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.productoR {
+    background-color: rgb(111, 190, 255);
+    border: 1px solid #ff771c;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.productoR img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.productoPo {
+    background-color: rgb(99, 221, 129);
+    border: 1px solid #ff771c;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.productoPo img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#carrito {
+    margin-top: 30px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.pago {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #7130c5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pago:hover {
+    background-color: #541e86;
+}
+
+.mesa {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #2cb455;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mesa:hover {
+    background-color: #218838;
+}
+
+.cancela {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e73c25;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancela:hover {
+    background-color: #941d15;
+}
+
+input[type="number"] {
+    width: 60px;
+    margin-top: 5px;
+}

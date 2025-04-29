@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(imagenes/fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #343a40;
+}
+
+form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    cursor: pointer;
+    background-color: #ff960c;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #2ab300;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+form[style*="display:inline;"] {
+    display: inline;
+}
+
+.boton-volver {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .boton-volver .btn {
+    display: inline-block;
+    background-color: #ff5e00;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-volver .btn:hover {
+    background-color: #210d91;
+  }

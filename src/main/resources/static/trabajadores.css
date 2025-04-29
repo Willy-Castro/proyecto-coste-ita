@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(imagenes/fondot.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px;
+  }
+
+  .boton-volver {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .boton-volver .btn {
+    display: inline-block;
+    background-color: #ff5e00;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-volver .btn:hover {
+    background-color: #242424;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgb(96, 160, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  th, td {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  th {
+    background-color: #ff7300;
+    color: white;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }

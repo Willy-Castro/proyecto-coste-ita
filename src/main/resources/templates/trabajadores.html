@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Trabajadores</title>
+    <link rel="stylesheet" href="/trabajadores.css">
+</head>
+<body>
+    <h1>Trabajadores Registrados:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>DNI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.usuario}">Nombre</td>
+                <td th:text="${usuario.dni}">DNI</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="boton-volver">
+        <a href="/index_rest.html" class="btn">Volver al Inicio</a>
+    </div>
+    
+</body>
+</html>

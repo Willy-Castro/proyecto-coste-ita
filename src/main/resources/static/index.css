@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  /*evita lineas de enlace*/
+  list-style: none;
+  /*la lista no aparece con punto*/
+}
+
+body {
+  /*tipo de letra y color de fondo*/
+  font-family: "Poppins", sans-serif;
+  background-color: #361b01;
+  background-image: url(imagenes/fondos.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  text-align: center;
+  text-decoration: none;
+  color: aliceblue;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo-icon img {
+  width: 60px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-icon:hover img {
+  transform: scale(1.1);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  /*fondo*/
+  background-image: url(imagenes/fondoi.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding: 80px 0;
+  margin-bottom: 40px;
+}
+
+/*menu estilos*/
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*orden*/
+}
+
+.logo {
+  color: #ff8b2c;
+  font-family: "Fascinate Inline", system-ui;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding-top: 75px;
+}
+
+.menu .navbar ul li {
+  position: relative;
+  float: left;
+}
+
+/*botones del menu inicio*/
+
+.menu .navbar ul li a {
+  font-size: 18px;
+  padding: 20px;
+  color: #FFFFFF;
+  font-weight: 600;
+  display: block;
+}
+
+.menu .navbar {
+  background-color: #1b1b1b;
+  border-radius: 20px;
+}
+
+.menu .navbar ul li a:hover {
+  color: #ff8b2c;
+}
+
+#menu {
+  /*llama al id de menu*/
+  display: none;
+}
+
+.menu-icono {
+  width: 25px;
+}
+
+.menu label {
+  cursor: pointer;
+  /*la mano de cursor*/
+  display: none;
+}
+
+/*titulo del parrafo diseño*/
+.header-content {
+  display: flex;
+}
+
+.header-txt {
+  flex-basis: 50%;
+}
+
+.header-txt h1 {
+  font-size: 60px;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.header-txt span {
+  color: #ff8b2c;
+}
+
+.header-txt p {
+  font-size: 17px;
+  color: #E0E0E0;
+  margin-bottom: 45px;
+  font-size: 18px;
+  font-weight: 400;
+  background: #e66f00;
+  padding: 20px 20px 20px 20px;
+  border-radius: 25px;
+}
+
+
+/*botones del inicio*/
+.btnpedido {
+  display: flex;
+}
+
+.btn-1,
+.btn-2,
+.btn-3{
+  display: inline-block;
+  padding: 11px 35px;
+  border: 2px solid #ff8b2c;
+  border-radius: 25px;
+  margin-right: 25px;
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+.btn-1:hover {
+  background-color: #ff802c;
+}
+
+.btn-F{
+  display: inline-block;
+  padding: 11px 35px;
+  border: 2px solid #1884ff;
+  border-radius: 25px;
+  margin-right: 25px;
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+.btn-F:hover {
+  background-color: #1884ff;
+}
+
+.btn-W{
+  display: inline-block;
+  padding: 11px 35px;
+  border: 2px solid #33b400;
+  border-radius: 25px;
+  margin-right: 25px;
+  font-size: 17px;
+  color: #FFFFFF;
+}
+
+.btn-W:hover {
+  background-color: #33b400;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-size: 35px;
+  margin-bottom: 45px;
+}
+
+/*productos lo cambio*/
+.platillos-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.refrescos-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.postres-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.platillos-1 {
+  background-color: #e08c1c;
+  border-radius: 25px;
+}
+
+.refrescos-1 {
+  background-color: #1776e2;
+  border-radius: 25px;
+}
+
+.postres-1 {
+  background-color: #05b15b;
+  border-radius: 25px;
+}
+
+.product-txt {
+  padding: 50px 30px;
+}
+
+/*sub titulos*/
+h3 {
+  font-size: 20px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price p {
+  font-size: 17px;
+  color: #ffffff;
+}
+
+/*botones de productos*/
+.btn-2 {
+  padding: 5px 25px;
+  background-color: #f37500;
+  margin-right: 0;
+}
+
+.btn-2:hover {
+  background-color: #000000;
+}
+
+/*parte inferior de contacto*/
+.contact {
+  padding: 150px 300px;
+}
+
+.contact-content {
+  background-color: #813e00;
+  text-align: center;
+  padding: 50px;
+  border-radius: 50px;
+}
+
+input {
+  /*la casilla de texto*/
+  padding: 18px 25px;
+  background-color: #5c2d01;
+  border: 0;
+  border-radius: 25px;
+  outline: none;
+  margin-right: 10px;
+  color: #FFFFFF;
+  font-size: 17px;
+}
+
+::placeholder {
+  color: #E0E0E0;
+  font-size: 17px;
+}
+
+.btn-3 {
+  background-color: #e77810;
+  cursor: pointer;
+  margin-right: 0;
+}
+
+
+/*parte inferior de la web*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.link ul {
+  display: flex;
+}
+
+.link ul li>a {
+  font-size: 17px;
+  color: #FFFFFF;
+  margin-right: 20px;
+}
+
+.link ul li>a:hover {
+  color: #ff9d2c;
+}
+
+/*acomodar dependiendo la forma de la ventana*/
+@media(max-width:991px) {
+  .menu {
+    padding: 20px;
+  }
+
+  .menu label {
+    display: initial;
+  }
+
+  .menu .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #FF5A2C;
+    display: none;
+  }
+
+  .menu .navbar ul li a:hover {
+    color: #1B1726;
+  }
+
+  .menu .navbar ul li {
+    width: 100%;
+  }
+
+  #menu:checked~.navbar {
+    display: initial;
+  }
+
+  .header {
+    min-height: 0vh;
+    padding: 80px 30px 50px 30px;
+  }
+
+  .header-txt {
+    text-align: center;
+    flex-basis: 100%;
+  }
+
+  .header-txt h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+
+  .btnpedido {
+    justify-content: center;
+  }
+
+  .btn-1:last-of-type {
+    margin-right: 0;
+  }
+
+  .popular {
+    display: none;
+  }
+
+  .platillos {
+    padding: 30px;
+  }
+
+  .platillos-content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .platillos-1 img {
+    width: 100%;
+  }
+
+  .refrescos {
+    padding: 30px;
+  }
+
+  .refrescos-content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .refrescos-1 img {
+    width: 100%;
+  }
+
+  .postres {
+    padding: 30px;
+  }
+
+  .postres-content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+
+  .postres-1 img {
+    width: 100%;
+  }
+
+  .contact {
+    padding: 30px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input {
+    margin: 0 0 20px 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .link ul {
+    margin-top: 20px;
+  }
+}

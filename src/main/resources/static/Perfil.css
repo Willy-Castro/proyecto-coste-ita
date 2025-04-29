@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-image: url(imagenes/fondop.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .logo-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .logo-icon img {
+    width: 60px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-icon:hover img {
+    transform: scale(1.1);
+  }
+  
+  .logo-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .btn-logout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background-color: #c0392b;
+  }
+  
+  .perfil-container {
+    background-color: rgb(255, 208, 176);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+  .dato {
+    margin: 10px 0;
+  }
+  
+  .seccion {
+    margin-top: 30px;
+  }
+  
+  select,
+  textarea,
+  input[type="checkbox"] {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .checkboxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .checkbox-box1 {
+    flex: 1;
+    background-color: #00b135;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 170px;
+  }
+  .checkbox-box2 {
+    flex: 1;
+    background-color: #f03737;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 170px;
+  }
+  .checkbox-box3 {
+    flex: 1;
+    background-color: #6d6be9;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 170px;
+  }
+  
+  .checkbox-box1 label {
+    display: block;
+    margin-top: 10px;
+  }
+  .checkbox-box2 label {
+    display: block;
+    margin-top: 10px;
+  }
+  .checkbox-box3 label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #f57e0f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #000000;
+  }
+  

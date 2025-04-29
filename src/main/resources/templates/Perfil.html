@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es"></html>
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+
+<body>
+  <a href="/index_rest.html" class="logo-icon">
+    <img src="imagenes/logo.png" alt="Logo La Costeñita">
+    <span class="logo-text">Inicio</span>
+  </a>
+
+  <a href="/logout" class="btn-logout">Cerrar Sesión</a>
+
+  <div class="perfil-container">
+    <h2>Perfil de Usuario</h2>
+
+    <div class="dato">
+       <strong>Nombre:</strong> <span th:text="${usuario.usuario}">Nombre</span>
+    </div>
+
+    <div class="dato">
+       <strong>DNI:</strong> <span th:text="${usuario.dni}">DNI</span>
+    </div>
+
+    <div class="seccion">
+      <label for="cargo">Seleccione su cargo/puesto:</label>
+      <select id="cargo" name="cargo">
+        <option value="">-- Seleccionar --</option>
+        <option value="cocinero">Cocinero</option>
+        <option value="mesero">Mesero</option>
+        <option value="administrador">Administrador</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+
+    <div class="seccion">
+      <label>Seleccione la opción de asistencia:</label>
+      <div class="checkboxes">
+        <div class="checkbox-box1">
+          <span>Asistí</span>
+          <label><input type="checkbox" name="asistencia"></label>
+        </div>
+        <div class="checkbox-box2">
+          <span>No asistiré</span>
+          <label><input type="checkbox" name="noasistencia"></label>
+        </div>
+        <div class="checkbox-box3">
+          <span>Justificación / Consulta</span>
+          <textarea placeholder="Escriba aqui"></textarea>
+          <button type="button">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

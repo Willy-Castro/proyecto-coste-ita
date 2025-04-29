@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Insumos</title>
+    <link rel="stylesheet" th:href="@{/insumos.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Insumos</h1>
+
+    <!-- Formulario para agregar nuevo insumo -->
+    <form th:action="@{/insumos/agregar}" method="post">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="categoria" placeholder="Categoría" required>
+        <input type="number" name="cantidad" value="1" min="0" placeholder="Cantidad" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <!-- Tabla de insumos -->
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="insumo : ${insumos}">
+            <td th:text="${insumo.nombre}"></td>
+            <td th:text="${insumo.categoria}"></td>
+            <td th:text="${insumo.cantidad}"></td>
+            <td>
+                <button type="button"
+                        th:attr="data-nombre=${insumo.nombre}, data-categoria=${insumo.categoria}, data-cantidad=${insumo.cantidad}"
+                        onclick="llenarFormulario(this)">
+                    Editar
+                </button>
+                <form th:action="@{/insumos/eliminar}" method="post" style="display:inline;">
+                    <input type="hidden" name="nombre" th:value="${insumo.nombre}">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Formulario para editar (aparece debajo) -->
+    <form id="formEditar" th:action="@{/insumos/editar}" method="post" style="margin-top: 30px;">
+        <h3>Editar Insumo:</h3>
+        <input type="text" name="nombre" placeholder="Nombre" readonly required>
+        <input type="text" name="categoria" placeholder="Categoría" required>
+        <input type="number" name="cantidad" value="1" min="0" placeholder="Cantidad" required>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</div>
+
+<div class="boton-volver">
+    <a href="/index_rest.html" class="btn">Volver al Inicio</a>
+</div>
+
+<script>
+    function llenarFormulario(button) {
+        const nombre = button.getAttribute('data-nombre');
+        const categoria = button.getAttribute('data-categoria');
+        const cantidad = button.getAttribute('data-cantidad');
+
+        document.querySelector('#formEditar input[name="nombre"]').value = nombre;
+        document.querySelector('#formEditar input[name="categoria"]').value = categoria;
+        document.querySelector('#formEditar input[name="cantidad"]').value = cantidad;
+    }
+</script>
+</body>
+</html>

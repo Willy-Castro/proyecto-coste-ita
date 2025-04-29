@@ -1,0 +1,37 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(imagenes/fondos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .form-container {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 24px;
+    color: #ff3232;
+  }
+
+  a {
+    display: block;
+    margin-top: 16px;
+    color: #ff9100;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

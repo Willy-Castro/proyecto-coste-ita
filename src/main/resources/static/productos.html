@@ -14,12 +14,12 @@
     <h2>Menu del dia:</h2>
     <h1>Refrescos</h1>
     <div class="producto-grid">
-        <div class="productoR" data-nombre="Chicha morada" data-precio="16">
+        <div class="productoR" data-nombre="Chicha morada" data-precio="16"><!-- datos que se usaran para mostrar en lista-->
             <img src="imagenes/ref1.jpg" alt="Chicha morada">
             <h2>Chicha morada</h2>
             <p>Precio: S/16.00</p>
-            <input type="number" value="1" min="1">
-            <button onclick="agregarAlCarrito(this)">Agregar</button>
+            <input type="number" value="1" min="1"><!-- Caja donde esta el minimo en pedir el producto es 1-->
+            <button onclick="agregarAlCarrito(this)">Agregar</button><!-- llama a la funcion agregarAlCarrito(this)-->
         </div>
         <div class="productoR" data-nombre="Limonada" data-precio="15">
             <img src="imagenes/ref2.jpg" alt="Limonada">
@@ -113,7 +113,6 @@
     <h3 id="total">Total: S/0.00</h3>
 
     <button class="pago" onclick="pagarNormal()">Pagar</button><!-- te lleva a la ventana y guarda = llama a la funcion pagarNormal-->
-    <button class="mesa" onclick="pagarEnMesa()">Pagar en Mesa</button>
     <button class="cancela" onclick="cancelarPedido()">Cancelar Pedido</button><!-- vacia el carrito = llama a la funcion cancelarPedido-->
 
 </body>

@@ -60,7 +60,6 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  align-items: center;
   min-height: 80vh;
   padding: 80px 0;
   margin-bottom: 40px;
@@ -129,10 +128,19 @@ img {
 /*titulo del parrafo diseño*/
 .header-content {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .header-txt {
   flex-basis: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
 }
 
 .header-txt h1 {
@@ -147,20 +155,21 @@ img {
 }
 
 .header-txt p {
-  font-size: 17px;
+  font-size: 18px;
   color: #E0E0E0;
   margin-bottom: 45px;
-  font-size: 18px;
   font-weight: 400;
   background: #e66f00;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   border-radius: 25px;
 }
 
 
 /*botones del inicio*/
-.btnpedido {
-  display: flex;
+.btn-1 {
+  white-space: nowrap; /* fuerza que el texto no se divida en varias líneas */
+  min-width: 160px;     /* o el valor que necesites */
+  text-align: center;   /* para que el texto esté centrado dentro del botón */
 }
 
 .btn-1,
@@ -173,6 +182,19 @@ img {
   margin-right: 25px;
   font-size: 17px;
   color: #FFFFFF;
+}
+
+.selector-idioma select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #000;
+}
+
+.selector-idioma {
+  margin: 10px 0;
 }
 
 .btn-1:hover {
@@ -205,6 +227,10 @@ img {
 
 .btn-W:hover {
   background-color: #33b400;
+}
+
+.btnpedido {
+  display: flex;
 }
 
 h2 {

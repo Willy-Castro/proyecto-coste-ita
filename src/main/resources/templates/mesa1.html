@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mesa 1</title>
+    <link rel="stylesheet" th:href="@{/mesa.css}">
+</head>
+<body>
+
+    <a href="/index_rest.html" class="logo-icon">
+        <img th:src="@{/imagenes/logo.png}" alt="Logo">
+        <span class="logo-text">Inicio</span>
+    </a>
+
+    <h1>Pedidos en Mesa 1</h1>
+    <div id="mesa-pedido"></div>
+    <button onclick="eliminarPedido()">Eliminar Pedido</button>
+
+    <script>
+        const pedido = JSON.parse(localStorage.getItem('mesa1')) || [];//lee el pedido guardado con la clave mesa1
+        const mesaPedido = document.getElementById('mesa-pedido');//busca el elemennto mesa-pedido para escribir los datos ahi
+        let total = 0;//inicia de 0
+
+        pedido.forEach(p => {
+            const pElem = document.createElement('p');//crea el parrafo para el pedido
+            //escribe los datos del pedido
+            pElem.textContent = `${p.cantidad} x ${p.nombre} = S/${(p.precio * p.cantidad).toFixed(2)}`;
+            mesaPedido.appendChild(pElem);
+            //total
+            total += p.precio * p.cantidad;
+        });
+
+        //con IGV
+        total *= 1.18;
+        const totalElem = document.createElement('p');//escribe el total
+        totalElem.textContent = `Total (con IGV): S/${total.toFixed(2)}`;//escribe el total con IGV
+        mesaPedido.appendChild(totalElem);
+
+        function eliminarPedido() {//borra los guardado de la mesa indicada
+            localStorage.removeItem('mesa1');
+            location.reload();
+        }
+    </script>
+</body>
+</html>

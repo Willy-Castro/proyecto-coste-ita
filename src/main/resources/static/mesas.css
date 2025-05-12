@@ -1,0 +1,95 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(imagenes/fondos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.botones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.boton-grid {
+    width: 250px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.boton-grid span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 0;
+}
+
+.boton-grid:hover {
+    background-color: #ff7b00;
+    transform: scale(1.05);
+}
+
+.boton-grid:hover span {
+    color: #fff;
+}
+
+.logo-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.logo-icon img {
+    width: 60px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-icon:hover img {
+    transform: scale(1.1);
+}
+
+.logo-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}

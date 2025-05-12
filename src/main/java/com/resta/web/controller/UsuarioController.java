@@ -43,28 +43,33 @@ public class UsuarioController {
         return "redirect:/login.html"; // Redirige al login
     }
 
-    @PostMapping("/register")
+    @PostMapping("/register") // Registramos un usuario con todos los datos nuevos
     public void registrar(@RequestParam String usuario,
+            @RequestParam String apellido,
+            @RequestParam String correo,
+            @RequestParam String dni,
             @RequestParam String password,
-            @RequestParam String dni, // recibe los datos del register.html
             HttpServletResponse response) throws IOException {
-        usuarioService.registrar(new Usuario(usuario, password, dni));// llama a usuarioservice para guardar esos datos
-        response.sendRedirect("/login.html");// dirige al html de login
+        // llama a usuarioservice para guardar esos datos
+        Usuario nuevoUsuario = new Usuario(usuario, apellido, correo, dni, password);
+        try {
+            usuarioService.registrar(nuevoUsuario);
+            response.sendRedirect("/login.html");// dirige al html de login
+        } catch (IllegalArgumentException e) {
+            response.sendRedirect("/nore.html");
+        }
     }
 
     @PostMapping("/login")
-    public void login(@RequestParam String usuario,
-            @RequestParam String password, // recibe los datos del loginr.html
+    public void login(@RequestParam String correo,
+            @RequestParam String password, // recibe los datos del login.html
             HttpServletResponse response,
             HttpSession session) throws IOException {
-
-        if (usuarioService.autenticar(usuario, password)) {// llama usuarioservice verifica si existen los datos
-
+        if (usuarioService.autenticar(correo, password)) {// llama usuarioservice verifica si existen los datos
             // busca y guarda los datos para mostrarlos en perfil del usuario cuando se
             // necesite
-            Usuario usuarioAutenticado = usuarioService.obtenerUsuarioPorNombre(usuario);
+            Usuario usuarioAutenticado = usuarioService.obtenerUsuarioPorCorreo(correo);
             session.setAttribute("usuarioLogueado", usuarioAutenticado);
-
             response.sendRedirect("/index_rest.html");// dirige al index que es la pagina inicial
         } else {
             response.sendRedirect("/no.html");// dirige a la pantalla de fallo que es cuando no estas registrado

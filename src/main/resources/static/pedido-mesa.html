@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido a Mesa</title>
+    <link rel="stylesheet" href="pedido-mesa.css">
+</head>
+<body>
+    <h1>Pedido Actual</h1>
+    <div id="pedido-resumen"></div>
+    <p id="total-pedido"></p>
+
+    <label for="mesa">Selecciona mesa:</label>
+    <select id="mesa">
+        <option value="1">Mesa 1</option>
+        <option value="2">Mesa 2</option>
+        <option value="3">Mesa 3</option>
+        <option value="4">Mesa 4</option>
+    </select>
+
+    <button onclick="enviarPedido()">Enviar Pedido</button>
+    <a href="/" class="btn-volver">Cancelar</a>
+
+    <script>
+        // Carga el pedido del localStorage
+        const pedido = JSON.parse(localStorage.getItem('pedido')) || [];//lee el pedido guardado
+        const pedidoResumen = document.getElementById('pedido-resumen');//busca el elemennto pedido-resumen para escribir los datos ahi
+        const totalPedido = document.getElementById('total-pedido');//busca el elemennto total para escribir los datos ahi
+        let total = 0;//inicia de 0
+
+        pedido.forEach(p => {
+            const pElem = document.createElement('p');//crea el parrafo para el pedido
+            //escribe los datos del pedido
+            pElem.textContent = `${p.cantidad} x ${p.nombre} = S/${(p.precio * p.cantidad).toFixed(2)}`;
+            pedidoResumen.appendChild(pElem);
+            //total
+            total += p.precio * p.cantidad;
+        });
+
+        //total IGV
+        total *= 1.18;
+        totalPedido.textContent = `Total (con IGV): S/${total.toFixed(2)}`;//escribe el total con IGV
+
+        function enviarPedido() {//funcion del boton de enviar pedido
+            const mesa = document.getElementById('mesa').value;//obtiene el numero de mesa quedepende de lo elegido
+            const pedidoGuardado = localStorage.getItem('pedido');//busca el pedido
+
+            if (pedidoGuardado) {//si existe pedido guardado
+            localStorage.setItem('mesa' + mesa, pedidoGuardado);//guarda el pedido dependiendo el numero de mesa
+            localStorage.removeItem('pedido');//elimina el pedido
+            } else {//si no hay pedidom guardado
+            alert('No hay pedido para enviar.');
+            }
+            
+            window.location.href = '/';//envia al inicio (index)
+        }
+    </script>
+</body>
+</html>

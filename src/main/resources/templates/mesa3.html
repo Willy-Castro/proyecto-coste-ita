@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mesa 3</title>
+    <link rel="stylesheet" th:href="@{/mesa.css}">
+</head>
+<body>
+
+    <a href="/index_rest.html" class="logo-icon">
+        <img th:src="@{/imagenes/logo.png}" alt="Logo">
+        <span class="logo-text">Inicio</span>
+    </a>
+
+    <h1>Pedidos en Mesa 3</h1>
+    <div id="mesa-pedido"></div>
+    <button onclick="eliminarPedido()">Eliminar Pedido</button>
+
+    <script>
+        const pedido = JSON.parse(localStorage.getItem('mesa3')) || [];
+        const mesaPedido = document.getElementById('mesa-pedido');
+        let total = 0;
+
+        pedido.forEach(p => {
+            const pElem = document.createElement('p');
+            pElem.textContent = `${p.cantidad} x ${p.nombre} = S/${(p.precio * p.cantidad).toFixed(2)}`;
+            mesaPedido.appendChild(pElem);
+            total += p.precio * p.cantidad;
+        });
+
+        total *= 1.18;
+        const totalElem = document.createElement('p');
+        totalElem.textContent = `Total (con IGV): S/${total.toFixed(2)}`;
+        mesaPedido.appendChild(totalElem);
+
+        function eliminarPedido() {
+            localStorage.removeItem('mesa3');
+            location.reload();
+        }
+    </script>
+</body>
+</html>

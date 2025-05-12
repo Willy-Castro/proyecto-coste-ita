@@ -53,6 +53,14 @@ body {
     border-radius: 8px;
     font-size: 16px;
   }
+  input[type="email"] {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-size: 16px;
+  }
   
   button {
     width: 100%;

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Costeñita</title>
+    <title th:text="#{web}">Web</title><!--titulo depagina cambiado-->
     <link rel="stylesheet" href="index.css">
     
 </head>
@@ -12,30 +12,41 @@
 <body>
     <header class="header"><!--Comienza-->
         <div class="menu container">
-            <a href="index.html" class="logo">La Costeñita</a>
-            <a href="/index_rest.html" class="logo-icon">
+            <a href="/" class="logo">La Costeñita</a>
+            <a href="/" class="logo-icon">
                 <img src="imagenes/logo.png" alt="Logo La Costeñita">
             </a>
             <input type="checkbox" id="menu" />
             <label for="menu">
                 <img src="images/menu.png" class="menu-icono" alt="menu"><!--menu y texto por si no carga menu-->
             </label>
+
             <nav class="navbar"><!--Navegacion-->
-                <ul><!--Lista-->
+                <ul>
                     <li><a href="/login.html">Iniciar sesion</a></li>
                     <li><a href="https://www.whatsapp.com/">Contactanos</a></li>
+                    <!-- Botones de cambio de idioma -->
+                    <li>
+                        <form method="get" th:action="@{/}"><!-- va redirigir al mismo index pero cambiando el idioma selccionado -->
+                            <select name="lang" onchange="this.form.submit()"><!-- el lang esta en es pero al seleccionar cambia-->
+                                <option value="es">Selecciona idioma</option>
+                                <option value="en">English</option>
+                                <option value="it">Italiano</option>
+                                <option value="ja">日本語</option>
+                                <option value="ch">中文</option>
+                                <option value="es">Español</option>
+                            </select>
+                        </form>
+                    </li>
                 </ul>
             </nav>
         </div>
         <div class="header-content container">
             <div class="header-txt">
-                <h1>Bienvenido a nuestra <span>web</span></h1>
-                <p><!--Parrafo-->
-                    La Costeñita tiene variedad de platillos cada dia, aparte de esto tenemos muchos tipos de refrescos
-                    y postres que son muy buenos.
-                    Puede realizar su pedido por medio del boton de “realizar pedido” y podra elegir lo que desee de la
-                    carta de hoy.
-                </p>
+
+                <!-- Texto a cambiar y con su etiqueta -->
+                <h1 th:text="#{titulo}">Bienvenido a nuestra web</h1>
+                <p th:text="#{descripcion}">Descripción por defecto</p>
 
                 <div class="btnpedido">
                     <a href="/productos.html" class="btn-1">Realizar pedido</a>
@@ -161,17 +172,16 @@
 
     <footer class="footer container">
         <div class="link">
-            <a href="index.html" class="logo">La Costeñita</a>
+            <a href="/" class="logo">La Costeñita</a>
         </div>
         <div class="link">
             <ul><!--Lista-->
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="/">Inicio</a></li>
                 <li><a href="/login.html">Iniciar sesion</a></li>
                 <li><a href="https://wa.link/dyb6go">Contactanos</a></li>
             </ul>
         </div>
     </footer>
-
 </body>
 
 </html>

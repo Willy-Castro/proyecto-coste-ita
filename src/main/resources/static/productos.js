@@ -34,6 +34,10 @@ function pagarNormal() {
     window.location.href = '/pago';//te manda a la ventana pago
 }
 
+function guardarPedido() {
+    localStorage.setItem('pedido', JSON.stringify(carrito));
+}
+
 function cancelarPedido() {//Funcion de borra todo lo que hay en el carrito
     carrito = []; //vacia
     actualizarCarrito(); //actualiza

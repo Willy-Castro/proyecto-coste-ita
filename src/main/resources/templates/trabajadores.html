@@ -8,18 +8,18 @@
 <body>
     <h1>Trabajadores Registrados:</h1>
     <table>
-        <thead>
-            <tr>
-                <th>Nombre de Usuario</th>
-                <th>DNI</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="usuario : ${usuarios}">
-                <td th:text="${usuario.usuario}">Nombre</td>
-                <td th:text="${usuario.dni}">DNI</td>
-            </tr>
-        </tbody>
+        <tr>
+           <th>Nombre</th>
+           <th>Apellido</th>
+           <th>DNI</th>
+           <th>Correo</th>
+       </tr>
+       <tr th:each="usuario : ${usuarios}">
+           <td th:text="${usuario.usuario}"></td>
+           <td th:text="${usuario.apellido}"></td>
+           <td th:text="${usuario.dni}"></td>
+           <td th:text="${usuario.correo}"></td>
+       </tr>
     </table>
 
     <div class="boton-volver">

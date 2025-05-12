@@ -15,16 +15,28 @@ public class UsuarioService {// registrar y autenticar usuarios
     private final File archivo = new File("usuarios.json"); // se va guardar los datos ingresados en el .json
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public void registrar(Usuario usuario) {// registrar al usuario
+    public void registrar(Usuario nuevoUsuario) {// registrar al usuario
         List<Usuario> usuarios = obtenerTodos();// carga la lista de usuarios actuales del archivo
-        usuarios.add(usuario);// agrega al nuevo usuario
+        boolean correoRepetido = usuarios.stream()
+                .anyMatch(u -> u.getCorreo().equals(nuevoUsuario.getCorreo()));
+        if (correoRepetido) {
+            throw new IllegalArgumentException("Correo ya registrado");
+        }
+        usuarios.add(nuevoUsuario);// agrega al nuevo usuario
         guardarTodos(usuarios);// guarda todo de nuevo en el archivo
     }
 
-    public boolean autenticar(String usuario, String password) {// revisar
-        List<Usuario> usuarios = obtenerTodos();// carga la lista de usuarios
-        return usuarios.stream()// comprueba si existe el usuario comparando la lista y los datos ingresados
-                .anyMatch(u -> u.getUsuario().equals(usuario) && u.getPassword().equals(password));
+    public boolean autenticar(String correo, String password) {
+        // Validamos si el correo ya existe para evitar duplicados
+        return obtenerTodos().stream()
+                .anyMatch(u -> u.getCorreo().equals(correo) && u.getPassword().equals(password));
+    }
+
+    public Usuario obtenerUsuarioPorCorreo(String correo) {// comprueba y brinda los datos del correo requerido
+        return obtenerTodos().stream()
+                .filter(u -> u.getCorreo().equals(correo))
+                .findFirst()
+                .orElse(null);
     }
 
     public List<Usuario> obtenerTodos() {// lee la lista de usuarios

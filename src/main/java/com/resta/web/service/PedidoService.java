@@ -11,7 +11,7 @@ public class PedidoService {
     private Map<Integer, List<Pedido>> mesas = new HashMap<>();
     private Map<Long, Pedido> pedidosSimulados = new HashMap<>();
 
-    public PedidoService() {// aqui se usa el buble for para las mesas 1 a 4
+    public PedidoService() {// aqui se usa el for para las mesas 1 a 4
         for (int i = 1; i <= 4; i++) {
             mesas.put(i, new ArrayList<>());// cada mesa tiene su lista vacia
         }
